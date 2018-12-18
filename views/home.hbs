@@ -1,0 +1,46 @@
+<h1>
+    사진을 등록해 주세요~!
+</h1><br>
+
+<body>
+    <form action='/upload', method='post', enctype="multipart/form-data">
+
+        <fieldset>
+            <legend>검색 하고자 하는 항목을 선택해주세요.</legend>
+            <div>
+                <input type="checkbox" id="Landmarks" name="interest" value="Landmarks">
+                <label for="Landmarks">Landmarks</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Labels" name="interest" value="Labels">
+                <label for="Labels">Labels</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Web" name="interest" value="Web">
+                <label for="Web">Web</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Text" name="interest" value="Text">
+                <label for="Text">Text</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Document" name="interest" value="Document">
+                <label for="Document">Document</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Properties" name="interest" value="Properties">
+                <label for="Properties">Properties</label>
+            </div>
+            <div>
+                <input type="checkbox" id="SafeSearch" name="interest" value="SafeSearch">
+                <label for="SafeSearch">Safe Search</label>
+            </div>
+        </fieldset>
+        <br>
+
+
+        <input type="file" name="uploadFile" />
+        <input type="submit" name="upload" />
+
+    </form>
+</body>

@@ -1,0 +1,180 @@
+<h1>
+    사진을 등록해 주세요~! (구글 비전 API)
+</h1><br>
+
+<body>
+    <form id="formData" action='/upload', method='post', enctype="multipart/form-data">
+
+        <fieldset style="display:none;">
+            <legend>검색 하고자 하는 항목을 선택해주세요.</legend>
+            <div>
+                <input type="checkbox" id="Landmarks" name="interest" value="Landmarks" disabled>
+                <label for="Landmarks">Landmarks</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Labels" name="interest" value="Labels" disabled>
+                <label for="Labels">Labels</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Web" name="interest" value="Web" disabled>
+                <label for="Web">Web</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Text" name="interest" value="Text" disabled>
+                <label for="Text">Text</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Document" name="interest" value="Document" disabled>
+                <label for="Document">Document</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Properties" name="interest" value="Properties" disabled>
+                <label for="Properties">Properties</label>
+            </div>
+            <div>
+                <input type="checkbox" id="SafeSearch" name="interest" value="SafeSearch" disabled>
+                <label for="SafeSearch">Safe Search</label>
+            </div>
+        </fieldset>
+        <br>
+
+        <div>
+            <label for="btnFile">파일 선택 : </label>
+            <input type="file" name="uploadFile" id="btnFile" /> <br>
+        </div>
+        <div>
+            <label for="inputUrl">URL 주소 : </label>
+            <input type="input" name="uploadFile" id="inputUrl" /> <br>
+        </div>
+        <div>
+            <input type="submit" name="upload" hidden />
+            <input type="button" name="upload2" id="btnSend" value="수동 전송" />
+        </div>
+
+    </form>
+
+    <div id="loader"></div>
+
+    <div style="display:none;" id="myDiv" class="animate-bottom">
+        <h2>Tada!</h2>
+        <p>Some text in my newly loaded page..</p>
+    </div>
+
+    <div id="resultDiv">
+        <div class="img">
+            <h3>
+                이미지 결과
+            </h3>
+            <canvas id="canvasResult" />
+            <img id="imgResult" />
+
+
+        </div>
+
+        <div class="tab">
+            <button class="tablinks" id="btnFace">Face Detection</button>
+            <button class="tablinks" id="btnLabel">Label Detection</button>
+            <button class="tablinks" id="btnText">Text Detection</button>
+            <button class="tablinks" id="btnLogo">Logo Detection</button>
+            <button class="tablinks" id="btnProperties">Properties Detection</button>
+            <button class="tablinks" id="btnSafeSearch">SafeSearch Detection</button>
+            <button class="tablinks" id="btnCropHints">CropHints Detection</button>
+            <button class="tablinks" id="btnWeb">Web Detection</button>
+
+            <!--<button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>-->
+        </div>
+
+        <div id="divFace" class="tabcontent">
+
+            <table class='cooltable' id="tblFace">
+            </table>
+    <!--        <h3>Paris2</h3>
+            <p>Paris is the capital of France.</p>-->
+        </div>
+
+        <div id="divLabel" class="tabcontent">
+            <table class='cooltable' id="tblLabel">
+            </table>
+
+        </div>
+
+        <div id="divText" class="tabcontent">
+            <table class='cooltable' id="tblText">
+            </table>
+
+        </div>
+
+        <div id="divLogo" class="tabcontent">
+            <table class='cooltable' id="tblLogo">
+            </table>
+
+        </div>
+
+
+        <div id="divProperties" class="tabcontent">
+            <table class='cooltable' id="tblProperties">
+            </table>
+
+        </div>
+
+
+        <div id="divSafeSearch" class="tabcontent">
+            <table class='cooltable' id="tblSafeSearch">
+            </table>
+
+        </div>
+
+        <div id="divCropHints" class="tabcontent">
+            <!--<table class='cooltable' id="tblCropHints">
+            </table>-->
+            <div class="img">
+                <h3>
+                    Crop Result
+                </h3>
+                <canvas id="canvasCropResult" />
+                <img id="imgCropResult" />
+
+
+            </div>
+
+
+        </div>
+
+        <div id="divWeb" class="tabcontent">
+            <table class='cooltable' id="tblWeb">
+            </table>
+
+        </div>
+    </div>
+
+    <iframe
+            width="350"
+            height="430"
+            src="https://console.api.ai/api-client/demo/embedded/04c511f5-ac55-442d-91ee-79eb64d231b5">
+    </iframe>
+</body>
+
+<link rel="stylesheet" href="/stylesheets/style.css">
+<script src="/javascripts/api.js"></script>
+<script src="/javascripts/home.js"></script>
+
+
+<!--
+<div class="tab">
+    <button class="tablinks" id="btnFace">Face Detection</button>
+    <button class="tablinks" id="btnLabel">Label Detection</button>
+    &lt;!&ndash;<button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>&ndash;&gt;
+</div>
+
+<div id="divFace" class="tabcontent">
+    <h3>Face Detection</h3>
+    <p>London is the capital city of England.</p>
+</div>
+
+<div id="divLabel" class="tabcontent">
+    <h3>Label Detection</h3>
+    <p>Paris is the capital of France.</p>
+</div>
+
+<link rel="stylesheet" href="/stylesheets/style.css">
+<script src="/javascripts/result.js"></script>-->
